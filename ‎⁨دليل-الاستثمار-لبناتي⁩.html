@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رحلتي للاستقلال المالي</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#17332A;
+  --green:#2E6B4F;
+  --green-soft:#E7F0EA;
+  --sage:#8FAF9B;
+  --sand:#FAF7F0;
+  --gold:#C9A227;
+  --gold-soft:#F7EFD8;
+  --warn:#9C4A1A;
+  --warn-soft:#F9EDE4;
+  --line:#DDE5DE;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'IBM Plex Sans Arabic',-apple-system,'Segoe UI',Tahoma,sans-serif;
+  background:var(--sand);
+  color:var(--ink);
+  line-height:1.9;
+  font-size:16.5px;
+}
+.wrap{max-width:860px;margin:0 auto;padding:0 22px;}
+
+/* ---------- الغلاف ---------- */
+.cover{
+  background:linear-gradient(160deg,#12291F 0%,#1E4A38 60%,#2E6B4F 100%);
+  color:#F5F2E8;
+  padding:74px 22px 60px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cover::after{
+  content:"";
+  position:absolute;inset:auto -80px -120px -80px;height:220px;
+  background:radial-gradient(ellipse at center,rgba(201,162,39,.22),transparent 70%);
+}
+.cover .kicker{
+  display:inline-block;
+  border:1px solid rgba(201,162,39,.6);
+  color:var(--gold);
+  border-radius:999px;
+  padding:5px 20px;
+  font-size:.82rem;
+  letter-spacing:.06em;
+  margin-bottom:26px;
+}
+.cover h1{
+  font-family:'Amiri',serif;
+  font-size:clamp(2.4rem,6vw,3.6rem);
+  font-weight:700;
+  line-height:1.5;
+  margin-bottom:12px;
+}
+.cover .sub{font-size:1.15rem;color:#D8E4DC;font-weight:300;margin-bottom:34px;}
+
+/* اختيار الاسم */
+.who{position:relative;z-index:2;max-width:520px;margin:0 auto 36px;}
+.who .wq{font-size:.95rem;color:#CFE0D5;margin-bottom:14px;}
+.who .names{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+.who button{
+  font-family:'Amiri',serif;font-size:1.35rem;font-weight:700;
+  color:#F5F2E8;background:rgba(255,255,255,.07);
+  border:1.5px solid rgba(255,255,255,.25);
+  border-radius:14px;padding:12px 34px;cursor:pointer;
+  transition:all .15s;
+}
+.who button:hover{border-color:var(--gold);}
+.who button.sel{
+  background:var(--gold);color:#17332A;border-color:var(--gold);
+  box-shadow:0 6px 24px rgba(201,162,39,.4);
+}
+.cover-facts{
+  display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-bottom:36px;position:relative;z-index:2;
+}
+.cover-facts .fact{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius);
+  padding:16px 24px;min-width:180px;
+}
+.cover-facts .n{font-size:1.5rem;font-weight:700;color:var(--gold);font-family:'Amiri',serif;}
+.cover-facts .l{font-size:.85rem;color:#C7D6CC;}
+.gift{
+  max-width:560px;margin:0 auto 26px;
+  background:rgba(201,162,39,.12);
+  border:1px solid rgba(201,162,39,.4);
+  border-radius:var(--radius);
+  padding:20px 26px;font-size:.98rem;line-height:2;position:relative;z-index:2;
+}
+.gift b{color:var(--gold);}
+.cover .disclaimer{font-size:.8rem;color:#9FB8A9;max-width:520px;margin:0 auto;line-height:1.9;position:relative;z-index:2;}
+
+/* ---------- المحتويات ---------- */
+.toc{padding:60px 0 26px;}
+.toc h2{font-family:'Amiri',serif;font-size:1.9rem;margin-bottom:8px;}
+.toc p{color:#5C6E63;margin-bottom:28px;font-size:.95rem;}
+.toc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.toc a{
+  display:flex;align-items:center;gap:14px;
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:15px 18px;text-decoration:none;color:var(--ink);
+  transition:border-color .15s, transform .15s;
+}
+.toc a:hover{border-color:var(--green);transform:translateY(-1px);}
+.toc .num{
+  font-family:'Amiri',serif;font-weight:700;font-size:1.25rem;color:var(--green);
+  background:var(--green-soft);width:42px;height:42px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.toc .t{font-weight:600;font-size:.95rem;line-height:1.5;}
+.toc a.special .num{background:var(--gold-soft);color:var(--gold);}
+
+/* ---------- فواصل الفصول ---------- */
+.chapter{
+  background:linear-gradient(135deg,#1B4433,#2E6B4F);
+  color:#F5F2E8;margin-top:66px;padding:44px 22px;
+}
+.chapter.calcband{background:linear-gradient(135deg,#7A6114,#C9A227);}
+.chapter .inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:26px;}
+.chapter .big{
+  font-family:'Amiri',serif;font-size:4.2rem;font-weight:700;line-height:1;
+  color:rgba(201,162,39,.95);flex-shrink:0;min-width:70px;text-align:center;
+}
+.chapter.calcband .big{color:rgba(255,255,255,.95);font-size:3.4rem;}
+.chapter h2{font-family:'Amiri',serif;font-size:clamp(1.5rem,4vw,2.1rem);line-height:1.5;}
+.chapter .tag{font-size:.85rem;color:#B9CDC0;font-weight:300;margin-top:4px;}
+.chapter.calcband .tag{color:#F4E9C6;}
+.journey{display:flex;gap:7px;margin-top:14px;}
+.journey span{width:26px;height:5px;border-radius:3px;background:rgba(255,255,255,.18);}
+.journey span.on{background:var(--gold);}
+
+/* ---------- المحتوى ---------- */
+section.body{padding:44px 0 8px;}
+.lead{font-size:1.08rem;line-height:2.1;margin-bottom:26px;}
+.lead b, p b{color:var(--green);font-weight:700;}
+h3.sec{
+  font-family:'Amiri',serif;font-size:1.45rem;margin:40px 0 16px;
+  padding-right:14px;border-right:4px solid var(--gold);line-height:1.5;
+}
+p.txt{margin-bottom:18px;color:#2B3E34;}
+
+.cards{display:grid;gap:14px;margin:22px 0;}
+.cards.c3{grid-template-columns:repeat(3,1fr);}
+.card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 20px 18px;
+}
+.card .ico{font-size:1.6rem;margin-bottom:8px;display:block;}
+.card h4{font-size:1rem;font-weight:700;margin-bottom:6px;color:var(--green);}
+.card p{font-size:.9rem;color:#4A5C51;line-height:1.9;}
+
+.note{
+  border-radius:var(--radius);padding:18px 22px;margin:24px 0;font-size:.95rem;line-height:2;
+}
+.note.key{background:var(--green-soft);border:1px solid #C6DACC;}
+.note.gold{background:var(--gold-soft);border:1px solid #E4D29A;}
+.note.warn{background:var(--warn-soft);border:1px solid #E7C7AE;}
+.note .h{font-weight:700;display:block;margin-bottom:4px;}
+.note.key .h{color:var(--green);}
+.note.gold .h{color:#8A6E14;}
+.note.warn .h{color:var(--warn);}
+
+.tbl{width:100%;border-collapse:collapse;margin:20px 0;background:#fff;border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 0 var(--line);}
+.tbl th{background:var(--ink);color:#F0EFE6;font-size:.85rem;font-weight:600;padding:12px 14px;text-align:right;}
+.tbl td{padding:12px 14px;font-size:.9rem;border-bottom:1px solid #EEF2EE;vertical-align:middle;}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl tr:nth-child(even) td{background:#FBFCFA;}
+.tbl td.num,.tbl th.num{font-variant-numeric:tabular-nums;font-weight:600;color:var(--green);}
+.tbl tr.hi td{background:var(--gold-soft);}
+.risk-pill{display:inline-block;border-radius:999px;padding:2px 12px;font-size:.78rem;font-weight:600;}
+.r0{background:#EDF2EE;color:#5C6E63;}
+.r1{background:#DCEBE0;color:#2E6B4F;}
+.r2{background:#F3EBCF;color:#8A6E14;}
+.r3{background:#F6E3CF;color:#A25A17;}
+.r4{background:#F6D9CB;color:#9C3A1A;}
+
+.ladder{margin:26px 0;}
+.ladder .step{display:flex;align-items:center;gap:14px;margin-bottom:10px;}
+.ladder .bar{border-radius:11px;padding:13px 18px;color:#fff;display:flex;align-items:center;gap:12px;flex:0 0 auto;}
+.ladder .n{
+  font-family:'Amiri',serif;font-weight:700;font-size:1.15rem;background:rgba(255,255,255,.22);
+  width:32px;height:32px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.ladder .bt{font-weight:700;font-size:.93rem;line-height:1.4;}
+.ladder .bs{font-size:.78rem;opacity:.85;font-weight:300;}
+.ladder .s5 .bar{width:58%;background:#1B4433;}
+.ladder .s4 .bar{width:68%;background:#2E6B4F;}
+.ladder .s3 .bar{width:78%;background:#4E8467;}
+.ladder .s2 .bar{width:88%;background:#7AA189;}
+.ladder .s1 .bar{width:100%;background:#A3BCAC;}
+.ladder-axis{display:flex;justify-content:space-between;font-size:.8rem;color:#5C6E63;margin-top:6px;padding:0 4px;}
+.ladder-axis b{color:var(--green);}
+
+.quiz{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:22px 0;}
+.quiz .q{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:20px;}
+.quiz .q .lvl{font-size:.78rem;font-weight:700;border-radius:999px;padding:3px 14px;display:inline-block;margin-bottom:10px;}
+.quiz .lo .lvl{background:#EDF2EE;color:#5C6E63;}
+.quiz .md .lvl{background:#F3EBCF;color:#8A6E14;}
+.quiz .hi .lvl{background:#DCEBE0;color:#2E6B4F;}
+.quiz .q p{font-size:.88rem;line-height:1.9;color:#3A4D42;}
+
+.steps{counter-reset:st;margin:24px 0;}
+.steps .s{
+  display:flex;gap:16px;background:#fff;border:1px solid var(--line);
+  border-radius:var(--radius);padding:18px 20px;margin-bottom:12px;align-items:flex-start;
+}
+.steps .s::before{
+  counter-increment:st;content:counter(st);
+  font-family:'Amiri',serif;font-weight:700;font-size:1.2rem;color:#fff;
+  background:var(--green);min-width:38px;height:38px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;margin-top:2px;
+}
+.steps .s .st{font-weight:700;margin-bottom:2px;}
+.steps .s p{font-size:.9rem;color:#4A5C51;line-height:1.9;}
+
+.avoid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+.avoid .a{
+  background:var(--warn-soft);border:1px solid #E7C7AE;border-radius:var(--radius);
+  padding:15px 18px;font-size:.9rem;line-height:1.9;display:flex;gap:10px;color:#54382A;
+}
+.avoid .a::before{content:"✕";color:var(--warn);font-weight:700;flex-shrink:0;}
+
+.growth{margin:26px 0;}
+.growth .row{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.growth .yr{min-width:74px;font-weight:700;font-size:.9rem;color:var(--ink);text-align:center;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 4px;}
+.growth .track{flex:1;background:#EDF2EE;border-radius:9px;height:34px;position:relative;overflow:hidden;}
+.growth .paid{position:absolute;top:0;right:0;height:100%;background:#A3BCAC;}
+.growth .gain{position:absolute;top:0;height:100%;background:var(--green);}
+.growth .val{min-width:96px;font-weight:700;color:var(--green);font-size:.92rem;font-variant-numeric:tabular-nums;}
+.growth-legend{display:flex;gap:22px;font-size:.82rem;color:#4A5C51;margin-top:4px;}
+.growth-legend i{display:inline-block;width:13px;height:13px;border-radius:4px;margin-left:6px;vertical-align:-2px;}
+.growth-legend .lp i{background:#A3BCAC;}
+.growth-legend .lg i{background:var(--green);}
+.growth-legend .ln i{background:#C9CFC9;}
+
+.quote{
+  font-family:'Amiri',serif;font-size:1.35rem;line-height:2;text-align:center;
+  color:var(--green);max-width:620px;margin:44px auto;position:relative;padding:0 12px;
+}
+.quote::before,.quote::after{content:"";display:block;width:56px;height:3px;background:var(--gold);margin:14px auto;border-radius:2px;}
+
+.plan{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:22px 0;}
+.plan .pr{display:flex;justify-content:space-between;gap:16px;padding:15px 22px;border-bottom:1px solid #EEF2EE;align-items:center;}
+.plan .pr:last-child{border-bottom:none;}
+.plan .pk{font-size:.9rem;color:#4A5C51;}
+.plan .pv{font-weight:700;color:var(--green);text-align:left;font-size:.95rem;}
+
+.win{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0;}
+.win .w{background:var(--green-soft);border:1px solid #C6DACC;border-radius:var(--radius);padding:15px 18px;font-size:.9rem;line-height:1.9;display:flex;gap:10px;}
+.win .w::before{content:"✓";color:var(--green);font-weight:700;flex-shrink:0;}
+
+/* ---------- الحاسبة ---------- */
+.calc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px;margin:26px 0;box-shadow:0 6px 30px rgba(23,51,42,.06);}
+.calc h4{font-family:'Amiri',serif;font-size:1.3rem;margin-bottom:18px;color:var(--ink);display:flex;align-items:center;gap:10px;}
+.calc h4 .badge{font-family:'IBM Plex Sans Arabic';font-size:.72rem;font-weight:700;background:var(--gold-soft);color:#8A6E14;border-radius:999px;padding:3px 12px;}
+.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+.cpanel{border:1.5px solid var(--line);border-radius:14px;padding:20px 18px;}
+.cpanel.pa{border-color:#BFD6C7;background:#FBFDFC;}
+.cpanel.pb{border-color:#E4D29A;background:#FEFCF6;}
+.cpanel .ptitle{font-weight:700;font-size:.95rem;margin-bottom:16px;display:flex;align-items:center;gap:8px;}
+.cpanel.pa .ptitle{color:var(--green);}
+.cpanel.pb .ptitle{color:#8A6E14;}
+.field{margin-bottom:16px;}
+.field label{display:flex;justify-content:space-between;font-size:.85rem;font-weight:600;color:#3A4D42;margin-bottom:7px;}
+.field label output{color:var(--green);font-weight:700;font-variant-numeric:tabular-nums;}
+.field input[type=number]{
+  width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 14px;
+  font-family:inherit;font-size:1rem;font-weight:600;color:var(--ink);background:#fff;
+  font-variant-numeric:tabular-nums;
+}
+.field input[type=number]:focus{outline:none;border-color:var(--green);}
+.field input[type=range]{width:100%;accent-color:var(--green);height:26px;cursor:pointer;}
+.riskbtns{display:flex;gap:8px;}
+.riskbtns button{
+  flex:1;border:1.5px solid var(--line);background:#fff;border-radius:10px;
+  padding:9px 4px;cursor:pointer;font-family:inherit;line-height:1.5;transition:all .12s;
+}
+.riskbtns button .rp{display:block;font-weight:700;font-size:.95rem;color:var(--ink);}
+.riskbtns button .rl{display:block;font-size:.7rem;color:#5C6E63;}
+.riskbtns button.sel{border-color:var(--green);background:var(--green-soft);}
+.riskbtns button.sel .rp{color:var(--green);}
+
+.result{margin-top:18px;border-top:1px dashed var(--line);padding-top:16px;}
+.result .fin{font-family:'Amiri',serif;font-size:1.7rem;font-weight:700;color:var(--green);line-height:1.4;}
+.result .finl{font-size:.78rem;color:#5C6E63;margin-bottom:10px;}
+.result .mini{display:flex;gap:10px;flex-wrap:wrap;}
+.result .mini div{background:#F4F7F4;border-radius:9px;padding:7px 13px;font-size:.78rem;color:#3A4D42;}
+.result .mini b{display:block;font-size:.92rem;color:var(--ink);font-variant-numeric:tabular-nums;}
+.result .mini .g b{color:var(--green);}
+
+.cbars{margin-top:22px;}
+.cbars .cb{display:flex;align-items:center;gap:12px;margin-bottom:11px;}
+.cbars .cl{min-width:118px;font-size:.82rem;font-weight:600;color:#3A4D42;line-height:1.4;}
+.cbars .ct{flex:1;background:#F0F3F0;border-radius:8px;height:30px;overflow:hidden;display:flex;flex-direction:row;}
+.cbars .seg{height:100%;transition:width .35s ease;}
+.cbars .seg.sp{background:#A3BCAC;}
+.cbars .seg.sg{background:var(--green);}
+.cbars .seg.sgB{background:var(--gold);}
+.cbars .seg.sn{background:#C9CFC9;}
+.cbars .cv{min-width:92px;text-align:left;font-weight:700;font-size:.86rem;color:var(--ink);font-variant-numeric:tabular-nums;}
+.compare-toggle{
+  display:block;width:100%;margin-top:18px;border:1.5px dashed #C9A227;background:var(--gold-soft);
+  color:#8A6E14;font-family:inherit;font-weight:700;font-size:.92rem;border-radius:12px;
+  padding:12px;cursor:pointer;transition:background .12s;
+}
+.compare-toggle:hover{background:#F2E5BC;}
+.hint{font-size:.8rem;color:#5C6E63;margin-top:14px;line-height:1.9;}
+.hidden{display:none !important;}
+
+/* تكلفة التأجيل */
+.delay-res{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px;}
+.delay-res .dcard{border-radius:12px;padding:16px 18px;text-align:center;}
+.delay-res .now{background:var(--green-soft);border:1px solid #C6DACC;}
+.delay-res .later{background:#F2F4F2;border:1px solid var(--line);}
+.delay-res .dl{font-size:.8rem;color:#4A5C51;margin-bottom:4px;}
+.delay-res .dv{font-family:'Amiri',serif;font-size:1.45rem;font-weight:700;}
+.delay-res .now .dv{color:var(--green);}
+.delay-res .later .dv{color:#5C6E63;}
+.delay-cost{
+  margin-top:14px;background:var(--warn-soft);border:1px solid #E7C7AE;border-radius:12px;
+  padding:14px 18px;text-align:center;font-size:.9rem;color:#54382A;
+}
+.delay-cost b{font-family:'Amiri',serif;font-size:1.35rem;color:var(--warn);display:block;}
+
+/* ---------- الرسالة ---------- */
+.letter-wrap{background:linear-gradient(160deg,#12291F,#1E4A38);margin-top:66px;padding:66px 22px;}
+.letter{
+  max-width:700px;margin:0 auto;background:#FDFBF5;border-radius:18px;
+  padding:52px 46px;box-shadow:0 24px 60px rgba(0,0,0,.35);position:relative;
+}
+.letter::before{content:"";position:absolute;top:0;right:0;left:0;height:6px;background:linear-gradient(90deg,var(--gold),#E8D48A);border-radius:18px 18px 0 0;}
+.letter .to{font-family:'Amiri',serif;font-size:1.9rem;color:var(--green);margin-bottom:22px;}
+.letter p{font-size:1.02rem;line-height:2.2;margin-bottom:18px;color:#2B3E34;}
+.letter .close{font-family:'Amiri',serif;font-size:1.2rem;color:var(--green);text-align:center;margin-top:30px;}
+.endnote{
+  text-align:center;padding:44px 22px 56px;color:#5C6E63;font-size:.9rem;line-height:2;
+}
+.endnote .rem{font-family:'Amiri',serif;font-size:1.15rem;color:var(--green);}
+
+@media(max-width:680px){
+  .cards.c3,.quiz,.avoid,.win,.toc-grid,.cgrid,.delay-res{grid-template-columns:1fr;}
+  .chapter .inner{gap:18px;}
+  .chapter .big{font-size:3rem;min-width:52px;}
+  .ladder .s5 .bar,.ladder .s4 .bar,.ladder .s3 .bar,.ladder .s2 .bar{width:100%;}
+  .letter{padding:36px 24px;}
+  .growth .val{min-width:78px;font-size:.84rem;}
+  .growth .yr{min-width:60px;font-size:.82rem;}
+  .cbars .cl{min-width:92px;font-size:.76rem;}
+  .cbars .cv{min-width:76px;font-size:.78rem;}
+  .tbl{display:block;overflow-x:auto;white-space:nowrap;}
+}
+@media print{.chapter{break-before:page;} body{background:#fff;}}
+</style>
+</head>
+<body>
+
+<!-- ============ الغلاف ============ -->
+<div class="cover">
+  <span class="kicker">دليل مبسّط وعملي لبناتي</span>
+  <h1>رحلتي للاستقلال المالي</h1>
+  <div class="sub">من أول راتب… إلى حرية الاختيار</div>
+
+  <div class="who">
+    <div class="wq">من تقرأ الآن؟ اختاري اسمك ليصبح الدليل موجّهًا لك:</div>
+    <div class="names">
+      <button class="namebtn sel" data-n="أثير">أثير</button>
+      <button class="namebtn" data-n="لمار">لمار</button>
+    </div>
+  </div>
+
+  <div class="cover-facts">
+    <div class="fact v-atheer"><div class="n">25 سنة</div><div class="l">بداية الحياة المهنية</div></div>
+    <div class="fact v-lamar hidden"><div class="n">20 سنة</div><div class="l">المرحلة الجامعية</div></div>
+    <div class="fact"><div class="n">100,000 ريال</div><div class="l">رأس مال تأسيسي</div></div>
+    <div class="fact"><div class="n">الهدف</div><div class="l">الاستقرار والاستقلال المالي</div></div>
+  </div>
+  <div class="gift">
+    <b>هدية البداية:</b> 100,000 ريال رأس مال تأسيسي لبدء رحلة الاستثمار — الهدف أن تتعلمي كيف تجعلين المال يعمل من أجلك، لا أن يكون مبلغًا للاستهلاك.
+  </div>
+  <div class="disclaimer">
+    هذا الدليل للتثقيف والتخطيط الأسري، وليس ضمانًا للعوائد أو توصية ملزمة بشراء صندوق بعينه.
+  </div>
+</div>
+
+<!-- ============ المحتويات ============ -->
+<div class="wrap toc">
+  <h2>خريطة الرحلة</h2>
+  <p>ثمانية فصول قصيرة تُقرأ بالترتيب، وحاسبة تجرّبين فيها الأرقام بنفسك.</p>
+  <div class="toc-grid">
+    <a href="#ch1"><span class="num">1</span><span class="t">لماذا أستثمر؟ الفكرة الأساسية</span></a>
+    <a href="#ch2"><span class="num">2</span><span class="t">المخاطر والعوائد: كيف أفهمهما؟</span></a>
+    <a href="#ch3"><span class="num">3</span><span class="t">كيف أبدأ في السعودية؟</span></a>
+    <a href="#ch4"><span class="num">4</span><span class="t">ثلاث قوى تصنع الفرق في ثروتك</span></a>
+    <a href="#ch5"><span class="num">5</span><span class="t">الوقت: أقوى عنصر لا يمكن تعويضه</span></a>
+    <a href="#calc" class="special"><span class="num">🧮</span><span class="t">جرّبي بنفسك: حاسبة الاستثمار</span></a>
+    <a href="#ch6"><span class="num">6</span><span class="t">خطتك الشخصية يا <span class="dname">أثير</span></span></a>
+    <a href="#ch7"><span class="num">7</span><span class="t">ماذا يمكن أن تصبح الـ100 ألف؟</span></a>
+    <a href="#ch8"><span class="num">8</span><span class="t">خطة أول 12 شهرًا</span></a>
+    <a href="#letter" class="special"><span class="num">✉</span><span class="t">رسالة خاصة إلى <span class="dname">أثير</span></span></a>
+  </div>
+</div>
+
+<!-- ============ الفصل 1 ============ -->
+<div class="chapter" id="ch1"><div class="inner">
+  <div class="big">١</div>
+  <div>
+    <h2>لماذا أستثمر؟</h2>
+    <div class="tag">الفكرة الأساسية قبل أي أرقام</div>
+    <div class="journey"><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <p class="lead">للمال <b>ثلاث وظائف مختلفة</b>، ولكل وظيفة مكانها:</p>
+  <div class="cards c3">
+    <div class="card"><span class="ico">☕</span><h4>أصرفه</h4><p>لأعيش وأستمتع بحياتي اليومية.</p></div>
+    <div class="card"><span class="ico">🛟</span><h4>أدخره</h4><p>لحاجة قريبة أعرف موعدها.</p></div>
+    <div class="card"><span class="ico">🌱</span><h4>أستثمره</h4><p>لكي ينمو ويعمل من أجلي في المستقبل.</p></div>
+  </div>
+
+  <div class="note key">
+    <span class="h">الهدف الحقيقي</span>
+    الاستثمار ليس طريقًا للثراء السريع. هدفه أن تزيد حرية اختياراتك مع الوقت: في العمل، والسكن، والسفر، والأسرة، والتقاعد المبكر أو الجزئي.
+  </div>
+
+  <div class="note gold">
+    <span class="h">أهم فكرة في الدليل كله</span>
+    الثروة لا تعتمد فقط على مقدار ما تكسبينه، بل على مقدار ما <b>تحتفظين به</b>، وما <b>تستثمرينه باستمرار</b>، وكم من <b>الوقت</b> تتركينه لينمو.
+  </div>
+
+  <h3 class="sec">ما الفرق بين الادخار والاستثمار؟</h3>
+  <table class="tbl">
+    <tr><th>النوع</th><th>متى أستخدمه؟</th><th>التذبذب المتوقع</th></tr>
+    <tr><td>الحساب الجاري</td><td>المصروف اليومي</td><td><span class="risk-pill r0">شبه معدوم</span></td></tr>
+    <tr><td>المرابحات / سوق النقد</td><td>احتياج قريب وسيولة</td><td><span class="risk-pill r1">منخفض</span></td></tr>
+    <tr><td>الصكوك / الدخل الثابت</td><td>استقرار ودخل</td><td><span class="risk-pill r2">منخفض إلى متوسط</span></td></tr>
+    <tr><td>صناديق متعددة الأصول</td><td>نمو مع تنويع</td><td><span class="risk-pill r2">حسب الصندوق</span></td></tr>
+    <tr><td>صناديق الأسهم</td><td>نمو طويل الأجل</td><td><span class="risk-pill r3">مرتفع</span></td></tr>
+    <tr><td>أسهم منفردة</td><td>بعد اكتساب خبرة</td><td><span class="risk-pill r4">مرتفع جدًا نسبيًا</span></td></tr>
+  </table>
+
+  <div class="note warn">
+    <span class="h">قاعدة بسيطة</span>
+    المال الذي قد تحتاجينه قريبًا لا تضعيه في استثمار عالي التذبذب.
+  </div>
+
+</div></section>
+
+<!-- ============ الفصل 2 ============ -->
+<div class="chapter" id="ch2"><div class="inner">
+  <div class="big">٢</div>
+  <div>
+    <h2>المخاطر والعوائد: كيف أفهمهما؟</h2>
+    <div class="tag">العلاقة بين العائد والمخاطرة</div>
+    <div class="journey"><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <h3 class="sec">العائد والمخاطرة: أين أضع مالي؟</h3>
+  <div class="ladder">
+    <div class="step s5"><div class="bar"><span class="n">5</span><div><div class="bt">صناديق الأسهم السعودية والعالمية</div><div class="bs">نمو أعلى وتذبذب أكبر</div></div></div></div>
+    <div class="step s4"><div class="bar"><span class="n">4</span><div><div class="bt">الصناديق المتوازنة</div><div class="bs">توازن بين النمو والاستقرار</div></div></div></div>
+    <div class="step s3"><div class="bar"><span class="n">3</span><div><div class="bt">الصكوك والدخل الثابت</div><div class="bs">دخل واستقرار</div></div></div></div>
+    <div class="step s2"><div class="bar"><span class="n">2</span><div><div class="bt">صناديق سوق النقد</div><div class="bs">مخاطر منخفضة، استقرار أعلى</div></div></div></div>
+    <div class="step s1"><div class="bar"><span class="n">1</span><div><div class="bt">الحساب الجاري / الادخار</div><div class="bs">سيولة عالية، نمو ضعيف</div></div></div></div>
+    <div class="ladder-axis"><span>⬆ كلما صعدتِ: <b>عائد متوقع أعلى + تذبذب أعلى</b></span><span>⬇ كلما نزلتِ: <b>أمان أعلى + نمو أقل</b></span></div>
+  </div>
+
+  <p class="txt">المغزى ليس اختيار أعلى عائد دائمًا، بل اختيار مستوى مخاطرة يتناسب مع <b>الهدف</b> و<b>مدة الاستثمار</b> و<b>القدرة النفسية على تحمل التذبذب</b>.</p>
+  <p class="txt">كل استثمار له علاقة بين العائد المتوقع والمخاطرة. عادةً، كلما سعيتِ لعائد أعلى احتجتِ إلى قبول تذبذب أكبر واحتمال فترات هبوط أطول.</p>
+
+  <h3 class="sec">اختبار بسيط لتحمل المخاطر</h3>
+  <p class="txt">تخيلي أن استثمارك انخفض من 100 ألف إلى 80 ألف. ماذا ستفعلين؟</p>
+  <div class="quiz">
+    <div class="q lo"><span class="lvl">تحمّل منخفض</span><p>سأبيع فورًا وأخرج من الاستثمار.</p></div>
+    <div class="q md"><span class="lvl">تحمّل متوسط</span><p>سأنزعج، لكني أستطيع الانتظار عدة سنوات.</p></div>
+    <div class="q hi"><span class="lvl">تحمّل أعلى</span><p>لا أحتاج المال الآن، سأستمر وربما أضيف.</p></div>
+  </div>
+
+  <div class="note warn">
+    <span class="h">مهم</span>
+    المخاطرة ليست فقط خسارة المال. هناك أيضًا مخاطرة أن تكوني متحفظة جدًا لعقود فلا ينمو المال بما يكفي لمواجهة التضخم وتحقيق أهدافك.
+  </div>
+
+  <h3 class="sec">التنويع</h3>
+  <p class="txt">لا تضعي كل أموالك في شركة أو قطاع أو سوق واحد. الصندوق المتنوع يجعل البداية أسهل لأنه يوزع الاستثمار على عدد كبير من الأصول. <b>هيئة السوق المالية</b> تؤكد أن التنويع من الأدوات الأساسية للحد من المخاطر.</p>
+
+  <h3 class="sec">تدرّج التعلم المقترح</h3>
+  <div class="steps">
+    <div class="s"><div><div class="st">ابدئي بصندوق متنوع</div><p>يناسب مستوى المخاطر الخاص بك.</p></div></div>
+    <div class="s"><div><div class="st">تعلمي الفرق بين الأصول</div><p>الأسهم، الصكوك، أسواق النقد، والعقار.</p></div></div>
+    <div class="s"><div><div class="st">بعد سنة على الأقل</div><p>ادرسي إضافة صندوق أو فئة أصول أخرى عند الحاجة.</p></div></div>
+    <div class="s"><div><div class="st">الأسهم المباشرة تأتي لاحقًا</div><p>وبنسبة صغيرة في البداية.</p></div></div>
+  </div>
+
+</div></section>
+
+<!-- ============ الفصل 3 ============ -->
+<div class="chapter" id="ch3"><div class="inner">
+  <div class="big">٣</div>
+  <div>
+    <h2>كيف أبدأ في السعودية؟</h2>
+    <div class="tag">خطوات عملية عبر الأهلي المالية</div>
+    <div class="journey"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <p class="lead">بما أن لديك حسابًا جاريًا في <b>البنك الأهلي السعودي</b>، فالبداية العملية يمكن أن تكون عبر <b>الأهلي المالية</b> بعد فتح / تفعيل الحساب الاستثماري وإكمال تقييم الملاءمة والمخاطر.</p>
+
+  <h3 class="sec">كيف أبدأ الاستثمار اليوم؟ خمس خطوات</h3>
+  <div class="steps">
+    <div class="s"><div><div class="st">حددي الهدف</div><p>نمو طويل الأجل، وليس مصروفًا قريبًا.</p></div></div>
+    <div class="s"><div><div class="st">أكملي استبيان الملاءمة وتحمّل المخاطر</div><p>بصدق — نتيجته هي التي تحدد ما يناسبك.</p></div></div>
+    <div class="s"><div><div class="st">اقرئي ملخص الصندوق</div><p>الهدف، مستوى المخاطر، الرسوم، وأين يستثمر.</p></div></div>
+    <div class="s"><div><div class="st">ابدئي بالصندوق المقترح</div><p>لخطة شخصيتك في هذا الدليل (الفصل السادس).</p></div></div>
+    <div class="s"><div><div class="st">فعّلي استثمارًا شهريًا تلقائيًا</div><p>الاستمرارية أهم من محاولة اختيار أفضل يوم للشراء.</p></div></div>
+  </div>
+
+  <div class="note key">
+    <span class="h">أمثلة متاحة لدى الأهلي المالية</span>
+    برنامج «ادخاري» لدى الأهلي المالية يتيح حاليًا خيارات متعددة الأصول: <b>متحفظ</b>، <b>متوازن</b>، <b>نمو</b>، إضافة إلى <b>السنبلة بالريال</b>. ويمكن تنفيذ الاستقطاع تلقائيًا من الحساب الجاري لدى البنك الأهلي السعودي. اختيار الصندوق النهائي يجب أن يطابق نتيجة الملاءمة.
+  </div>
+
+  <div class="note gold">
+    <span class="h">قاعدة السنة الأولى</span>
+    لا نريد محفظة معقدة. الهدف في أول 12 شهرًا هو بناء <b>عادة الاستثمار</b> وفهم ما تملكينه، وليس مطاردة أعلى عائد.
+  </div>
+
+  <h3 class="sec">ما الذي أتجنبه في البداية؟</h3>
+  <div class="avoid">
+    <div class="a">المضاربة اليومية ومحاولة توقيت السوق.</div>
+    <div class="a">الاستثمار بناءً على توصية شخص في وسائل التواصل دون فهم.</div>
+    <div class="a">الاقتراض للاستثمار.</div>
+    <div class="a">وضع نسبة كبيرة في سهم واحد أو أصل عالي المخاطر.</div>
+  </div>
+
+</div></section>
+
+<!-- ============ الفصل 4 ============ -->
+<div class="chapter" id="ch4"><div class="inner">
+  <div class="big">٤</div>
+  <div>
+    <h2>ثلاث قوى تصنع الفرق في ثروتك</h2>
+    <div class="tag">المبلغ الشهري × العائد × الوقت</div>
+    <div class="journey"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span><span></span></div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <p class="txt">سنستخدم في الأمثلة رأس مال أولي قدره <b>100 ألف ريال</b>. الأرقام حسابية افتراضية قبل الرسوم وأي التزامات أخرى، والعائد الفعلي قد يكون أعلى أو أقل وقد يكون سالبًا في بعض السنوات.</p>
+
+  <h3 class="sec">أ. أثر مبلغ الاستثمار الشهري — عند عائد افتراضي 7%</h3>
+  <table class="tbl">
+    <tr><th>شهريًا</th><th class="num">10 سنوات</th><th class="num">20 سنة</th><th class="num">30 سنة</th></tr>
+    <tr><td>بدون إضافة</td><td class="num">201 ألف</td><td class="num">404 ألف</td><td class="num">812 ألف</td></tr>
+    <tr><td>1,000 ريال</td><td class="num">374 ألف</td><td class="num">925 ألف</td><td class="num">2.03 مليون</td></tr>
+    <tr class="hi"><td>3,000 ريال</td><td class="num">720 ألف</td><td class="num">1.97 مليون</td><td class="num">4.47 مليون</td></tr>
+    <tr><td>5,000 ريال</td><td class="num">1.07 مليون</td><td class="num">3.01 مليون</td><td class="num">6.91 مليون</td></tr>
+  </table>
+  <div class="note key">
+    <span class="h">المغزى</span>
+    رفع المبلغ الشهري مع ارتفاع الدخل أقوى بكثير من البحث المستمر عن صفقة خارقة.
+  </div>
+
+  <h3 class="sec">ب. أثر اختلاف العائد — 100 ألف + 3,000 شهريًا</h3>
+  <table class="tbl">
+    <tr><th>عائد افتراضي</th><th class="num">10 سنوات</th><th class="num">20 سنة</th><th class="num">30 سنة</th></tr>
+    <tr><td>4%</td><td class="num">591 ألف</td><td class="num">1.32 مليون</td><td class="num">2.41 مليون</td></tr>
+    <tr class="hi"><td>7%</td><td class="num">720 ألف</td><td class="num">1.97 مليون</td><td class="num">4.47 مليون</td></tr>
+    <tr><td>10%</td><td class="num">885 ألف</td><td class="num">3.01 مليون</td><td class="num">8.77 مليون</td></tr>
+  </table>
+  <div class="note key">
+    <span class="h">المغزى</span>
+    فرق صغير في متوسط العائد يصبح كبيرًا مع الوقت، لكن العائد الأعلى عادةً يتطلب قبول مخاطرة وتذبذب أعلى.
+  </div>
+
+</div></section>
+
+<!-- ============ الفصل 5 ============ -->
+<div class="chapter" id="ch5"><div class="inner">
+  <div class="big">٥</div>
+  <div>
+    <h2>الوقت: أقوى عنصر لا يمكن تعويضه</h2>
+    <div class="tag">كيف ينمو الاستثمار مع الوقت؟</div>
+    <div class="journey"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <p class="txt">مثال تعليمي مبسّط: نفترض <b>100 ألف ريال بداية + 3,000 ريال شهريًا + عائد افتراضي 7%</b>. الأرقام تقريبية للتوضيح وليست عوائد مضمونة. لاحظي كيف يتضخم الجزء الأخضر الداكن (النمو) مع مرور السنوات:</p>
+
+  <div class="growth">
+    <div class="row"><div class="yr">5 سنوات</div><div class="track"><div class="paid" style="width:6.3%"></div><div class="gain" style="right:6.3%;width:1.7%"></div></div><div class="val">357 ألف</div></div>
+    <div class="row"><div class="yr">10 سنوات</div><div class="track"><div class="paid" style="width:10.3%"></div><div class="gain" style="right:10.3%;width:5.8%"></div></div><div class="val">720 ألف</div></div>
+    <div class="row"><div class="yr">15 سنة</div><div class="track"><div class="paid" style="width:14.3%"></div><div class="gain" style="right:14.3%;width:13.3%"></div></div><div class="val">1.24 مليون</div></div>
+    <div class="row"><div class="yr">20 سنة</div><div class="track"><div class="paid" style="width:18.3%"></div><div class="gain" style="right:18.3%;width:25.7%"></div></div><div class="val">1.97 مليون</div></div>
+    <div class="row"><div class="yr">25 سنة</div><div class="track"><div class="paid" style="width:22.4%"></div><div class="gain" style="right:22.4%;width:44.7%"></div></div><div class="val">3 ملايين</div></div>
+    <div class="row"><div class="yr">30 سنة</div><div class="track"><div class="paid" style="width:26.4%"></div><div class="gain" style="right:26.4%;width:73.6%"></div></div><div class="val">4.47 مليون</div></div>
+    <div class="growth-legend"><span class="lp"><i></i>ما دفعتِه</span><span class="lg"><i></i>النمو (عمل المال لصالحك)</span></div>
+  </div>
+
+  <table class="tbl">
+    <tr><th>المدة</th><th class="num">ما دفعتِه</th><th class="num">قيمة المحفظة</th><th class="num">النمو</th></tr>
+    <tr><td>5 سنوات</td><td class="num">280 ألف</td><td class="num">357 ألف</td><td class="num">77 ألف</td></tr>
+    <tr><td>10 سنوات</td><td class="num">460 ألف</td><td class="num">720 ألف</td><td class="num">260 ألف</td></tr>
+    <tr><td>15 سنة</td><td class="num">640 ألف</td><td class="num">1.24 مليون</td><td class="num">596 ألف</td></tr>
+    <tr><td>20 سنة</td><td class="num">820 ألف</td><td class="num">1.97 مليون</td><td class="num">1.15 مليون</td></tr>
+    <tr><td>25 سنة</td><td class="num">1 مليون</td><td class="num">3 ملايين</td><td class="num">2 مليون</td></tr>
+    <tr class="hi"><td>30 سنة</td><td class="num">1.18 مليون</td><td class="num">4.47 مليون</td><td class="num">3.29 مليون</td></tr>
+  </table>
+
+  <div class="note gold">
+    <span class="h">تكلفة التأجيل</span>
+    من تبدأ في عمر 25 وتستثمر 30 سنة لديها وقت مضاعف تقريبًا لمن تؤجل البداية إلى 35 وتستثمر 20 سنة. الوقت لا يمكن شراؤه لاحقًا. <b>جرّبيها بنفسك في الحاسبة بالأسفل ⬇</b>
+  </div>
+
+  <h3 class="sec">متى أراقب استثماري؟</h3>
+  <div class="cards c3">
+    <div class="card"><span class="ico">👀</span><h4>نظرة سريعة</h4><p>مرة كل 3 أشهر.</p></div>
+    <div class="card"><span class="ico">📋</span><h4>مراجعة حقيقية للخطة</h4><p>مرة واحدة في السنة.</p></div>
+    <div class="card"><span class="ico">🚫</span><h4>لا تغيّري الخطة</h4><p>لأن السوق هبط أسبوعًا أو شهرًا.</p></div>
+  </div>
+
+  <h3 class="sec">متى أغيّر الخطة؟</h3>
+  <div class="win">
+    <div class="w">عندما يتغير الهدف أو موعد الحاجة للمال.</div>
+    <div class="w">عندما يتغير الدخل أو الالتزامات بشكل جوهري.</div>
+    <div class="w">عندما تكتشفين أن مستوى التذبذب أعلى مما تستطيعين تحمله.</div>
+    <div class="w">عندما تصبح المحفظة غير متوازنة أو معقدة دون سبب.</div>
+  </div>
+
+  <div class="quote">الصبر ليس عدم فعل شيء؛<br>الصبر هو الاستمرار في خطة جيدة رغم الضوضاء اليومية.</div>
+
+</div></section>
+
+<!-- ============ الحاسبة ============ -->
+<div class="chapter calcband" id="calc"><div class="inner">
+  <div class="big">🧮</div>
+  <div>
+    <h2>جرّبي بنفسك: حاسبة الاستثمار</h2>
+    <div class="tag">غيّري الأرقام وشاهدي النتيجة فورًا — أرقام تقريبية قبل الرسوم وليست وعدًا</div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <!-- الحاسبة الرئيسية -->
+  <div class="calc">
+    <h4>💰 كم تصبح محفظتي؟ <span class="badge">مع مقارنة: لو لم أستثمر</span></h4>
+    <div class="cgrid" id="cgrid">
+
+      <div class="cpanel pa">
+        <div class="ptitle">🟢 سيناريو أ</div>
+        <div class="field">
+          <label>رأس المال الأول (ريال)</label>
+          <input type="number" id="a_start" value="100000" min="0" step="5000">
+        </div>
+        <div class="field">
+          <label>الاستثمار الشهري (ريال) <output id="a_pmt_o">3,000</output></label>
+          <input type="range" id="a_pmt" min="0" max="15000" step="250" value="3000">
+        </div>
+        <div class="field">
+          <label>المدة <output id="a_yrs_o">20 سنة</output></label>
+          <input type="range" id="a_yrs" min="1" max="40" step="1" value="20">
+        </div>
+        <div class="field">
+          <label>مستوى العائد الافتراضي</label>
+          <div class="riskbtns" id="a_risk">
+            <button data-r="4"><span class="rp">4%</span><span class="rl">متحفظ / مخاطر منخفضة</span></button>
+            <button data-r="7" class="sel"><span class="rp">7%</span><span class="rl">متوازن / مخاطر متوسطة</span></button>
+            <button data-r="10"><span class="rp">10%</span><span class="rl">نمو / مخاطر أعلى</span></button>
+          </div>
+        </div>
+        <div class="result">
+          <div class="fin" id="a_fin">—</div>
+          <div class="finl">قيمة المحفظة المتوقعة</div>
+          <div class="mini">
+            <div>دفعتِ <b id="a_paid">—</b></div>
+            <div class="g">النمو <b id="a_gain">—</b></div>
+            <div>لو لم تستثمري <b id="a_cash">—</b></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cpanel pb hidden" id="panelB">
+        <div class="ptitle">🟡 سيناريو ب</div>
+        <div class="field">
+          <label>رأس المال الأول (ريال)</label>
+          <input type="number" id="b_start" value="100000" min="0" step="5000">
+        </div>
+        <div class="field">
+          <label>الاستثمار الشهري (ريال) <output id="b_pmt_o">5,000</output></label>
+          <input type="range" id="b_pmt" min="0" max="15000" step="250" value="5000">
+        </div>
+        <div class="field">
+          <label>المدة <output id="b_yrs_o">20 سنة</output></label>
+          <input type="range" id="b_yrs" min="1" max="40" step="1" value="20">
+        </div>
+        <div class="field">
+          <label>مستوى العائد الافتراضي</label>
+          <div class="riskbtns" id="b_risk">
+            <button data-r="4"><span class="rp">4%</span><span class="rl">متحفظ / مخاطر منخفضة</span></button>
+            <button data-r="7" class="sel"><span class="rp">7%</span><span class="rl">متوازن / مخاطر متوسطة</span></button>
+            <button data-r="10"><span class="rp">10%</span><span class="rl">نمو / مخاطر أعلى</span></button>
+          </div>
+        </div>
+        <div class="result">
+          <div class="fin" id="b_fin" style="color:#8A6E14">—</div>
+          <div class="finl">قيمة المحفظة المتوقعة</div>
+          <div class="mini">
+            <div>دفعتِ <b id="b_paid">—</b></div>
+            <div class="g">النمو <b id="b_gain">—</b></div>
+            <div>لو لم تستثمري <b id="b_cash">—</b></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="compare-toggle" id="cmpToggle">＋ قارني بسيناريو ثانٍ</button>
+
+    <div class="cbars" id="cbars">
+      <div class="cb"><div class="cl">بدون استثمار<br><small style="font-weight:400;color:#8A958C">المال في الدرج / حساب جاري</small></div><div class="ct"><div class="seg sn" id="bar_cash"></div></div><div class="cv" id="barv_cash">—</div></div>
+      <div class="cb"><div class="cl">سيناريو أ</div><div class="ct"><div class="seg sp" id="bar_a_p"></div><div class="seg sg" id="bar_a_g"></div></div><div class="cv" id="barv_a">—</div></div>
+      <div class="cb hidden" id="rowB"><div class="cl">سيناريو ب</div><div class="ct"><div class="seg sp" id="bar_b_p"></div><div class="seg sgB" id="bar_b_g"></div></div><div class="cv" id="barv_b">—</div></div>
+      <div class="growth-legend"><span class="lp"><i></i>ما دفعتِه</span><span class="lg"><i></i>النمو</span><span class="ln"><i></i>بدون استثمار</span></div>
+    </div>
+
+    <p class="hint">«بدون استثمار» تعني ادخار نفس المبالغ دون أي عائد. الفرق بينها وبين المحفظة هو ما يصنعه الاستثمار والوقت لصالحك. النسب (4% / 7% / 10%) افتراضات تعليمية تحاكي مستويات المخاطر، وليست عوائد مضمونة لأي صندوق.</p>
+  </div>
+
+  <!-- حاسبة تكلفة التأجيل -->
+  <div class="calc">
+    <h4>⏳ حاسبة تكلفة التأجيل <span class="badge">البدء الآن مقابل البدء لاحقًا</span></h4>
+    <p class="txt" style="font-size:.9rem">نفس رأس المال والمبلغ الشهري والعائد من <b>سيناريو أ</b> أعلاه، ونفس تاريخ النهاية — الفرق الوحيد: متى تبدئين؟</p>
+    <div class="field" style="max-width:420px">
+      <label>سنوات التأجيل <output id="d_yrs_o">5 سنوات</output></label>
+      <input type="range" id="d_yrs" min="1" max="15" step="1" value="5">
+    </div>
+    <div class="delay-res">
+      <div class="dcard now">
+        <div class="dl" id="d_now_l">لو بدأتِ الآن (20 سنة استثمار)</div>
+        <div class="dv" id="d_now">—</div>
+      </div>
+      <div class="dcard later">
+        <div class="dl" id="d_later_l">لو أجّلتِ 5 سنوات (15 سنة استثمار)</div>
+        <div class="dv" id="d_later">—</div>
+      </div>
+    </div>
+    <div class="delay-cost">
+      تكلفة التأجيل التقريبية
+      <b id="d_cost">—</b>
+      مبلغ لا يعوَّض لاحقًا… لأن الوقت لا يمكن شراؤه.
+    </div>
+  </div>
+
+</div></section>
+
+<!-- ============ الفصل 6 ============ -->
+<div class="chapter" id="ch6"><div class="inner">
+  <div class="big">٦</div>
+  <div>
+    <h2>خطتك الشخصية يا <span class="dname">أثير</span></h2>
+    <div class="tag">نقطة البداية المقترحة لك تحديدًا</div>
+    <div class="journey"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <div class="v-atheer">
+  <h3 class="sec">طبيعتك الاستثمارية</h3>
+  <p class="txt">أنتِ <b>متحفظة وتميلين للاستقرار</b>. هذه ميزة كبيرة إذا جعلتك منضبطة، لكنها تصبح عائقًا إذا تحولت إلى خوف من أي تذبذب. هدفك ليس أعلى عائد؛ هدفك بناء استقلال مالي يقلل اعتمادك على الوظيفة مع مرور السنوات.</p>
+
+  <h3 class="sec">نقطة البداية المقترحة</h3>
+  <div class="plan">
+    <div class="pr"><span class="pk">رأس المال الأول</span><span class="pv">100,000 ريال</span></div>
+    <div class="pr"><span class="pk">الاستثمار الشهري الآن</span><span class="pv">3,000 ريال تقريبًا</span></div>
+    <div class="pr"><span class="pk">المرحلة التالية — بعد ارتفاع الراتب المتوقع</span><span class="pv">8,000 – 10,000 ريال</span></div>
+    <div class="pr"><span class="pk">مستوى المخاطر المبدئي</span><span class="pv">متوسط</span></div>
+    <div class="pr"><span class="pk">الأفق الزمني</span><span class="pv">15 – 30 سنة</span></div>
+    <div class="pr"><span class="pk">نقطة البداية الأبسط</span><span class="pv">صندوق متعدد الأصول متوازن كبداية</span></div>
+  </div>
+  <p class="txt" style="font-size:.86rem;color:#5C6E63;">هذه نقطة بداية تعليمية. الصندوق النهائي يُحدد بعد اختبار الملاءمة وقراءة شروط الصندوق ومستوى مخاطره.</p>
+
+  <div class="note gold">
+    <span class="h">قاعدتك الخاصة</span>
+    «عندما يرتفع راتبي، أوجّه <b>50% على الأقل من الزيادة</b> إلى الاستثمار قبل أن ترتفع مصاريفي.»
+  </div>
+
+  <h3 class="sec">ما الذي أريد منك التركيز عليه؟</h3>
+  <div class="win">
+    <div class="w">عدم السماح لنمط الحياة بأن يرتفع بنفس سرعة الراتب.</div>
+    <div class="w">قبول أن التذبذب الطبيعي لا يعني أن الاستثمار سيئ.</div>
+    <div class="w">بناء رصيد استثماري يعطيك حرية أكبر في قرار الاستمرار بالعمل مستقبلًا.</div>
+    <div class="w">عدم استخدام رأس المال الاستثماري لمشتريات يمكن تمويلها من الدخل الجاري.</div>
+  </div>
+  </div>
+
+  <div class="v-lamar hidden">
+  <h3 class="sec">مرحلتك الاستثمارية</h3>
+  <p class="txt">أنتِ في الجامعة، وهذا يعني أنك تملكين <b>أطول أفق زمني في العائلة</b> — وهي أقوى ميزة في الاستثمار كله. لا توجد التزامات ولا حاجة قريبة لهذا المال، فرأس المال يستطيع أن ينمو دون أن يُلمس. مهمتك في هذه المرحلة ليست إضافة مال، بل <b>التعلم</b> وترك الوقت يعمل لصالحك.</p>
+
+  <h3 class="sec">نقطة البداية المقترحة</h3>
+  <div class="plan">
+    <div class="pr"><span class="pk">رأس المال الأول</span><span class="pv">100,000 ريال</span></div>
+    <div class="pr"><span class="pk">الاستثمار الشهري الآن — المرحلة الجامعية</span><span class="pv">لا شيء ملزم؛ التركيز على التعلم ونمو رأس المال</span></div>
+    <div class="pr"><span class="pk">بعد التخرج والتوظف (بعد سنتين تقريبًا)</span><span class="pv">3,000 ريال شهريًا من الراتب</span></div>
+    <div class="pr"><span class="pk">مستوى المخاطر المبدئي</span><span class="pv">متوسط</span></div>
+    <div class="pr"><span class="pk">الأفق الزمني</span><span class="pv">20 – 35 سنة</span></div>
+    <div class="pr"><span class="pk">نقطة البداية الأبسط</span><span class="pv">صندوق متعدد الأصول متوازن كبداية</span></div>
+  </div>
+  <p class="txt" style="font-size:.86rem;color:#5C6E63;">هذه نقطة بداية تعليمية. الصندوق النهائي يُحدد بعد اختبار الملاءمة وقراءة شروط الصندوق ومستوى مخاطره.</p>
+
+  <div class="note gold">
+    <span class="h">قاعدتك الخاصة</span>
+    «من أول راتب لي بعد التخرج، أفعّل الاستقطاع الشهري من الشهر الأول — <b>قبل أن يعتاد مصروفي على كامل الراتب</b>.»
+  </div>
+
+  <h3 class="sec">ما الذي أريد منك التركيز عليه؟</h3>
+  <div class="win">
+    <div class="w">عدم لمس رأس المال لمصاريف الجامعة أو المشتريات — هذا المال وظيفته النمو فقط.</div>
+    <div class="w">استغلال سنتي الجامعة في التعلم: افهمي الصناديق والرسوم وأين يستثمر صندوقك.</div>
+    <div class="w">قبول التذبذب الطبيعي بهدوء — أنتِ لا تحتاجين هذا المال قريبًا أصلًا.</div>
+    <div class="w">تفعيل الاستقطاع الشهري من أول راتب بعد التخرج، دون تأجيل.</div>
+  </div>
+  </div>
+
+</div></section>
+
+<!-- ============ الفصل 7 ============ -->
+<div class="chapter" id="ch7"><div class="inner">
+  <div class="big">٧</div>
+  <div>
+    <h2>ماذا يمكن أن تصبح الـ100 ألف الخاصة بـ<span class="dname">أثير</span>؟</h2>
+    <div class="tag"><span class="v-atheer">أثر فرق 2,000 ريال شهريًا على المدى الطويل</span><span class="v-lamar hidden">سنتا نموّ في الجامعة… ثم الاستقطاع من أول راتب</span></div>
+    <div class="journey"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <div class="v-atheer">
+  <p class="txt">نفترض أنك تستثمرين <b>3,000 ريال شهريًا خلال السنة الأولى</b>، ثم تختارين مستوى ثابتًا بعد ارتفاع الراتب. يوضح الجدول كيف يغيّر فرق 2,000 ريال شهريًا النتيجة على المدى الطويل:</p>
+
+  <table class="tbl">
+    <tr><th>العمر</th><th class="num">8,000 شهريًا</th><th class="num">9,000 شهريًا</th><th class="num">10,000 شهريًا</th></tr>
+    <tr><td>عمر 30</td><td class="num">633 ألف</td><td class="num">688 ألف</td><td class="num">743 ألف</td></tr>
+    <tr><td>عمر 40</td><td class="num">2.66 مليون</td><td class="num">2.94 مليون</td><td class="num">3.22 مليون</td></tr>
+    <tr><td>عمر 50</td><td class="num">6.72 مليون</td><td class="num">7.47 مليون</td><td class="num">8.21 مليون</td></tr>
+    <tr class="hi"><td>عمر 60</td><td class="num">14.89 مليون</td><td class="num">16.56 مليون</td><td class="num">18.23 مليون</td></tr>
+  </table>
+
+  <p class="txt" style="font-size:.86rem;color:#5C6E63;">ملاحظة: هذه أمثلة بقيمة اسمية وبعائد افتراضي 7% سنويًا، وليست وعدًا. لم نرفع المساهمة تلقائيًا مع التضخم أو زيادات الراتب إلا إذا ذُكر ذلك.</p>
+
+  <h3 class="sec">ماذا تقول الأرقام؟</h3>
+  <div class="steps">
+    <div class="s"><div><div class="st">القرار الأهم ليس اختيار الصندوق الأعلى عائدًا</div><p>بل تثبيت نسبة استثمار قوية بعد قفزة الراتب.</p></div></div>
+    <div class="s"><div><div class="st">مثال: 9,000 ريال شهريًا بعد السنة الأولى</div><p>المثال الحسابي يصل إلى نحو 2.94 مليون عند 40 ونحو 7.47 مليون عند 50.</p></div></div>
+    <div class="s"><div><div class="st">أي زيادات مستقبلية فوق هذه الأرقام</div><p>قد تصنع فرقًا أكبر بكثير.</p></div></div>
+  </div>
+  </div>
+
+  <div class="v-lamar hidden">
+  <p class="txt">خطتك على مرحلتين: <b>سنتا الجامعة</b> ينمو فيهما رأس المال وحده (100 ألف تصبح نحو <b>115 ألفًا</b> بعائد افتراضي 7%)، ثم <b>بعد التخرج والتوظف عند عمر 22 تقريبًا</b> تبدئين استقطاعًا شهريًا من راتبك. يوضح الجدول أثر المبلغ الشهري بعد التخرج:</p>
+
+  <table class="tbl">
+    <tr><th>العمر</th><th class="num">2,000 شهريًا</th><th class="num">3,000 شهريًا</th><th class="num">5,000 شهريًا</th></tr>
+    <tr><td>عمر 30</td><td class="num">457 ألف</td><td class="num">586 ألف</td><td class="num">842 ألف</td></tr>
+    <tr><td>عمر 40</td><td class="num">1.27 مليون</td><td class="num">1.70 مليون</td><td class="num">2.56 مليون</td></tr>
+    <tr><td>عمر 50</td><td class="num">2.89 مليون</td><td class="num">3.93 مليون</td><td class="num">6.01 مليون</td></tr>
+    <tr class="hi"><td>عمر 60</td><td class="num">6.15 مليون</td><td class="num">8.41 مليون</td><td class="num">12.93 مليون</td></tr>
+  </table>
+
+  <p class="txt" style="font-size:.86rem;color:#5C6E63;">ملاحظة: هذه أمثلة بقيمة اسمية وبعائد افتراضي 7% سنويًا، وليست وعدًا. لم نرفع المساهمة تلقائيًا مع التضخم أو زيادات الراتب إلا إذا ذُكر ذلك.</p>
+
+  <h3 class="sec">ماذا تقول الأرقام؟</h3>
+  <div class="steps">
+    <div class="s"><div><div class="st">أكبر ميزة لديك هي البداية المبكرة</div><p>سنتان كاملتان من النمو قبل أول راتب — وقت لا يملكه من يبدأ بعد التوظف.</p></div></div>
+    <div class="s"><div><div class="st">مثال: 3,000 ريال شهريًا بعد التخرج</div><p>المثال الحسابي يصل إلى نحو 1.70 مليون عند 40 ونحو 3.93 مليون عند 50.</p></div></div>
+    <div class="s"><div><div class="st">رفع المبلغ لاحقًا مع نمو الراتب</div><p>قد يصنع فرقًا أكبر بكثير — كما ترين في عمود 5,000.</p></div></div>
+  </div>
+  </div>
+
+</div></section>
+
+<!-- ============ الفصل 8 ============ -->
+<div class="chapter" id="ch8"><div class="inner">
+  <div class="big">٨</div>
+  <div>
+    <h2>خطة أول 12 شهرًا</h2>
+    <div class="tag">ست خطوات فقط — ثم مراجعة</div>
+    <div class="journey"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span></div>
+  </div>
+</div></div>
+<section class="body"><div class="wrap">
+
+  <div class="v-atheer">
+  <div class="steps">
+    <div class="s"><div><div class="st">فتح / تفعيل حساب الأهلي المالية</div><p>وإكمال تقييم الملاءمة.</p></div></div>
+    <div class="s"><div><div class="st">استثمار الـ100 ألف</div><p>في الصندوق الذي يطابق مستوى مخاطرتك، مع فهم هدفه ورسومه.</p></div></div>
+    <div class="s"><div><div class="st">تفعيل استقطاع شهري</div><p>بقيمة 3,000 ريال.</p></div></div>
+    <div class="s"><div><div class="st">عدم متابعة السعر يوميًا</div><p>مراجعة مختصرة كل 3 أشهر.</p></div></div>
+    <div class="s"><div><div class="st">عند ارتفاع الراتب المتوقع</div><p>رفع الاستقطاع مباشرة إلى 8,000 – 10,000 ريال قبل زيادة المصروف.</p></div></div>
+    <div class="s"><div><div class="st">بعد 12 شهرًا</div><p>مراجعة الخطة، وليس الحكم عليها من ربح أو خسارة سنة واحدة.</p></div></div>
+  </div>
+
+  <h3 class="sec">مؤشرات النجاح بعد سنة</h3>
+  <div class="win">
+    <div class="w">استثمرتِ 12 شهرًا دون انقطاع.</div>
+    <div class="w">تعرفين أين يستثمر صندوقك ولماذا اخترته.</div>
+    <div class="w">لم تبيعي بسبب هبوط قصير.</div>
+    <div class="w">رفعتِ الاستثمار عند زيادة الدخل.</div>
+  </div>
+  </div>
+
+  <div class="v-lamar hidden">
+  <div class="steps">
+    <div class="s"><div><div class="st">فتح / تفعيل حساب الأهلي المالية</div><p>وإكمال تقييم الملاءمة.</p></div></div>
+    <div class="s"><div><div class="st">استثمار الـ100 ألف</div><p>في الصندوق الذي يطابق مستوى مخاطرتك، مع فهم هدفه ورسومه.</p></div></div>
+    <div class="s"><div><div class="st">لا استقطاع شهري ملزم في المرحلة الجامعية</div><p>وإن توفر فائض صغير من المصروف، فإضافته اختيارية لبناء العادة مبكرًا.</p></div></div>
+    <div class="s"><div><div class="st">عدم متابعة السعر يوميًا</div><p>مراجعة مختصرة كل 3 أشهر.</p></div></div>
+    <div class="s"><div><div class="st">التعلم خلال سنتي الجامعة</div><p>فهم الفصول 1–5 جيدًا: الأصول، المخاطر، ولماذا اخترتِ صندوقك.</p></div></div>
+    <div class="s"><div><div class="st">عند التخرج والتوظف</div><p>تفعيل استقطاع 3,000 ريال من أول راتب، قبل أن يرتفع المصروف.</p></div></div>
+  </div>
+
+  <h3 class="sec">مؤشرات النجاح بعد سنة</h3>
+  <div class="win">
+    <div class="w">بقيت الـ100 ألف مستثمرة دون سحب منها.</div>
+    <div class="w">تعرفين أين يستثمر صندوقك ولماذا اخترته.</div>
+    <div class="w">لم تبيعي بسبب هبوط قصير.</div>
+    <div class="w">أصبحتِ جاهزة لتفعيل الاستقطاع فور استلام أول راتب.</div>
+  </div>
+  </div>
+
+  <div class="note key">
+    <span class="h">لا نقيس النجاح بالسوق</span>
+    إذا هبط السوق بعد سنة فهذا لا يعني أن الخطة فشلت. النجاح في السنة الأولى هو: فهمك للاستثمار، واستمرارك، وعدم اتخاذ قرار عاطفي.
+  </div>
+
+</div></section>
+
+<!-- ============ الرسالة ============ -->
+<div class="letter-wrap" id="letter">
+  <div class="letter">
+    <div class="to">رسالة خاصة إلى <span class="dname">أثير</span></div>
+    <div class="v-atheer">
+    <p>أثير،</p>
+    <p>أنتِ الآن في نقطة مهمة جدًا: بدأتِ حياتك المهنية قبل أن تتراكم عليك الالتزامات. وهذا يعطيك فرصة نادرة لبناء أساس مالي قوي من أول سنوات العمل.</p>
+    <p>طبيعتك المتحفظة ليست ضعفًا في الاستثمار؛ بالعكس، الانضباط وعدم الاندفاع ميزتان مهمتان. المطلوب فقط ألا يتحول الحرص إلى تأجيل دائم أو إبقاء المال دون نمو.</p>
+    <p>نحن نبدأ معك بـ100 ألف ريال، لكن الهدية الأهم هي أن تتعلمي كيف تضيفين إليها من دخلك وتتركي الوقت يعمل لصالحك. لا أريد أن يكون هدفك التوقف عن العمل بسرعة، بل أن تصلي إلى مرحلة يصبح فيها العمل اختيارًا أكثر منه ضرورة مالية.</p>
+    <p>ابدئي، استمري، ولا تجعلي ارتفاع راتبك يذهب كله إلى ارتفاع المصروف. إذا حافظتِ على هذه القاعدة، فالاستقرار الذي تبحثين عنه سيُبنى سنة بعد سنة.</p>
+    </div>
+    <div class="v-lamar hidden">
+    <p>لمار،</p>
+    <p>أنتِ اليوم في مرحلة لا يملكها أحد غيرك: ما زلتِ في الجامعة، وأمامك أطول وقت للاستثمار. هذه الـ100 ألف ستعمل من أجلك سنتين كاملتين قبل أن تستلمي أول راتب — وهذه ميزة لا يمكن شراؤها لاحقًا مهما كان الدخل.</p>
+    <p>مهمتك الآن ليست أن تضيفي مالًا، بل أن تتعلمي. افهمي أين يستثمر صندوقك، ولماذا يرتفع وينخفض، ولا تلمسي رأس المال لمصاريف يمكن تدبيرها من غيره. التذبذب الذي سترينه خلال هذه السنوات معلّم مجاني — راقبيه بهدوء ودون خوف.</p>
+    <p>وعندما تتخرجين وتستلمين أول راتب، فعّلي الاستقطاع الشهري من الشهر الأول، قبل أن يعتاد مصروفك على كامل الراتب. من تبدأ مبكرًا مثلك لا تحتاج أن تلحق بأحد؛ الجميع سيحاول أن يلحق بها.</p>
+    <p>ادرسي، وتعلمي، ودعي الوقت يعمل لصالحك.</p>
+    </div>
+    <div class="close">الهدف ليس أن تصبحي مستثمرة محترفة اليوم،<br>بل أن تبدئي اليوم وتصبحي أفضل كل سنة.</div>
+  </div>
+</div>
+
+<div class="endnote">
+  <div class="rem">العائد المتوقع ليس مضمونًا</div>
+  وأفضل خطة هي التي تفهمينها وتستطيعين الاستمرار عليها لسنوات.
+</div>
+
+<script>
+(function(){
+  /* ---------- اختيار الاسم ---------- */
+  var nameBtns = document.querySelectorAll('.namebtn');
+  function setDaughter(n){
+    document.querySelectorAll('.dname').forEach(function(e){e.textContent = n;});
+    var isLamar = (n === 'لمار');
+    document.querySelectorAll('.v-atheer').forEach(function(e){e.classList.toggle('hidden', isLamar);});
+    document.querySelectorAll('.v-lamar').forEach(function(e){e.classList.toggle('hidden', !isLamar);});
+  }
+  nameBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      nameBtns.forEach(function(x){x.classList.remove('sel');});
+      b.classList.add('sel');
+      setDaughter(b.getAttribute('data-n'));
+    });
+  });
+
+  /* ---------- أدوات حسابية ---------- */
+  function fv(p, pmt, years, annualPct){
+    var r = annualPct/100/12, m = Math.round(years*12);
+    var g = Math.pow(1+r, m);
+    if(r === 0) return p + pmt*m;
+    return p*g + pmt*(g-1)/r;
+  }
+  function fmt(v){
+    if(v >= 1e6){
+      var x = (v/1e6);
+      return (x >= 10 ? x.toFixed(1) : x.toFixed(2)).replace(/\.?0+$/,'') + ' مليون';
+    }
+    if(v >= 1e3) return Math.round(v/1e3).toLocaleString('en-US') + ' ألف';
+    return Math.round(v).toLocaleString('en-US');
+  }
+  function num(v){ return Math.round(v).toLocaleString('en-US'); }
+
+  /* ---------- عناصر السيناريوهات ---------- */
+  function getScenario(prefix){
+    var risk = document.querySelector('#'+prefix+'_risk button.sel');
+    return {
+      start: Math.max(0, parseFloat(document.getElementById(prefix+'_start').value) || 0),
+      pmt: parseFloat(document.getElementById(prefix+'_pmt').value) || 0,
+      yrs: parseFloat(document.getElementById(prefix+'_yrs').value) || 1,
+      rate: parseFloat(risk.getAttribute('data-r'))
+    };
+  }
+
+  var compareOn = false;
+
+  function render(){
+    var a = getScenario('a');
+    var aFin = fv(a.start, a.pmt, a.yrs, a.rate);
+    var aPaid = a.start + a.pmt*a.yrs*12;
+    document.getElementById('a_pmt_o').textContent = num(a.pmt);
+    document.getElementById('a_yrs_o').textContent = a.yrs + (a.yrs >= 3 && a.yrs <= 10 ? ' سنوات' : ' سنة');
+    document.getElementById('a_fin').textContent = fmt(aFin) + ' ريال';
+    document.getElementById('a_paid').textContent = fmt(aPaid);
+    document.getElementById('a_gain').textContent = '+' + fmt(aFin - aPaid);
+    document.getElementById('a_cash').textContent = fmt(aPaid);
+
+    var bFin = 0, bPaid = 0;
+    if(compareOn){
+      var b = getScenario('b');
+      bFin = fv(b.start, b.pmt, b.yrs, b.rate);
+      bPaid = b.start + b.pmt*b.yrs*12;
+      document.getElementById('b_pmt_o').textContent = num(b.pmt);
+      document.getElementById('b_yrs_o').textContent = b.yrs + (b.yrs >= 3 && b.yrs <= 10 ? ' سنوات' : ' سنة');
+      document.getElementById('b_fin').textContent = fmt(bFin) + ' ريال';
+      document.getElementById('b_paid').textContent = fmt(bPaid);
+      document.getElementById('b_gain').textContent = '+' + fmt(bFin - bPaid);
+      document.getElementById('b_cash').textContent = fmt(bPaid);
+    }
+
+    /* الأشرطة */
+    var maxV = Math.max(aFin, aPaid, compareOn ? bFin : 0, 1);
+    function w(v){ return Math.max(0, (v/maxV)*100); }
+    document.getElementById('bar_cash').style.width = w(aPaid) + '%';
+    document.getElementById('barv_cash').textContent = fmt(aPaid);
+    document.getElementById('bar_a_p').style.width = w(aPaid) + '%';
+    document.getElementById('bar_a_g').style.width = w(aFin - aPaid) + '%';
+    document.getElementById('barv_a').textContent = fmt(aFin);
+    if(compareOn){
+      document.getElementById('bar_b_p').style.width = w(bPaid) + '%';
+      document.getElementById('bar_b_g').style.width = w(bFin - bPaid) + '%';
+      document.getElementById('barv_b').textContent = fmt(bFin);
+    }
+
+    /* تكلفة التأجيل — من مدخلات سيناريو أ */
+    var d = parseFloat(document.getElementById('d_yrs').value) || 1;
+    if(d >= a.yrs) d = Math.max(1, a.yrs - 1);
+    var nowV = aFin;
+    var laterV = fv(a.start, a.pmt, Math.max(0, a.yrs - d), a.rate);
+    document.getElementById('d_yrs_o').textContent = d + (d >= 3 && d <= 10 ? ' سنوات' : ' سنة');
+    document.getElementById('d_now_l').textContent = 'لو بدأتِ الآن (' + a.yrs + ' سنة استثمار)';
+    document.getElementById('d_later_l').textContent = 'لو أجّلتِ ' + d + (d >= 3 && d <= 10 ? ' سنوات' : ' سنة') + ' (' + (a.yrs - d) + ' سنة استثمار)';
+    document.getElementById('d_now').textContent = fmt(nowV) + ' ريال';
+    document.getElementById('d_later').textContent = fmt(laterV) + ' ريال';
+    document.getElementById('d_cost').textContent = '−' + fmt(nowV - laterV) + ' ريال';
+  }
+
+  /* ---------- ربط الأحداث ---------- */
+  ['a_start','a_pmt','a_yrs','b_start','b_pmt','b_yrs','d_yrs'].forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener('input', render);
+  });
+  ['a_risk','b_risk'].forEach(function(id){
+    document.querySelectorAll('#'+id+' button').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('#'+id+' button').forEach(function(x){x.classList.remove('sel');});
+        b.classList.add('sel');
+        render();
+      });
+    });
+  });
+  document.getElementById('cmpToggle').addEventListener('click', function(){
+    compareOn = !compareOn;
+    document.getElementById('panelB').classList.toggle('hidden', !compareOn);
+    document.getElementById('rowB').classList.toggle('hidden', !compareOn);
+    this.textContent = compareOn ? '− إخفاء سيناريو المقارنة' : '＋ قارني بسيناريو ثانٍ';
+    render();
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
